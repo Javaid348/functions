@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title>
+    <title>JavaScript Functions Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .function-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .function-item:last-child {
+            border-bottom: none;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
 </head>
 <body>
+    <h1>JavaScript Functions</h1>
+    <div class="container">
+        <div class="function-item">
+            <h3>Test All Functions</h3>
+            <p>Check the browser console (F12) for test results.</p>
+            <button onclick="runAllTests()">Run Console Tests</button>
+        </div>
+        
+        <div class="function-item">
+            <h3>Interactive Tests</h3>
+            <button onclick="interactiveAdd()">Add Two Numbers</button>
+            <button onclick="interactiveCompare()">Compare Numbers</button>
+            <button onclick="interactiveGreet()">Greet User</button>
+            <button onclick="interactiveGrade()">Check Grade</button>
+            <div id="ui-result" class="result"></div>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
+    <script>
+        function showResult(text) {
+            document.getElementById('ui-result').innerText = "Result: " + text;
+        }
+
+        function interactiveAdd() {
+            const n1 = Number(prompt("Enter first number:"));
+            const n2 = Number(prompt("Enter second number:"));
+            showResult(addTwoNumbers(n1, n2));
+        }
+
+        function interactiveCompare() {
+            const n1 = Number(prompt("Enter first number:"));
+            const n2 = Number(prompt("Enter second number:"));
+            showResult(compareNumbers(n1, n2));
+        }
+
+        function interactiveGreet() {
+            const name = prompt("Enter your name:");
+            showResult(greetUser(name));
+        }
+
+        function interactiveGrade() {
+            const score = Number(prompt("Enter score (0-100):"));
+            showResult(getGrade(score));
+        }
+    </script>
 </body>
 </html>
